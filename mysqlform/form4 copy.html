@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container"> <br>
+
+        <form class="well form-horizontal" action="form3_copy.php" method="POST" id="contact_form">
+
+            <div class="card" style="border-color:blue;">
+                <div class="card-header" style="background-image: linear-gradient(blue, lightblue); font-size: 2.5rem;">Search</div>
+                <div class="card-body">
+
+
+
+                    <!-- Text input-->
+                    <div class="container">
+
+
+                        <di v class="dropdown form-group">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> Select a Field :
+                            </button>
+                            <div class="dropdown-menu" name="dropdown[]">
+                                <a class="dropdown-item" name="dropdown" value="first_name">First Name</option>
+                                <a class="dropdown-item" name="dropdown" value="last_name">Last Name</a>
+                                <a class="dropdown-item" name="dropdown" value="contact_no" href="#">Phone Number</a>
+                                <a class="dropdown-item" name="dropdown" value="email" href="#">Email ID</a>
+                            </div>
+                    </div>
+
+
+
+
+
+                    <!-- Text input-->
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Enter field</label>
+                        <div class="col-md-4 inputGroupContainer">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                <input name="d" placeholder="    Field(eg-eram)" class="form-control" type="text ">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Select Basic -->
+
+                    <!-- Success message -->
+
+                    <!-- Button -->
+                    <div class="form-group ">
+                        <label class="col-md-4 control-label "></label>
+                        <div class="col-md-4 "><br>
+                            <button type="submit " class="btn-info " ;>Search <span class="glyphicon glyphicon-send "></span></button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+    </div>
+    </form>
+    </div>
+    <!-- /.container -->
+
+</body>
+
+</html>

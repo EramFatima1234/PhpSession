@@ -57,7 +57,7 @@ include 'welcome.php';
         }
         if (isset($_POST['Email'])) {
             $fname = $_POST['fname'];
-            $prepare = $conn->prepare('select * from personal_detail where email = :fname');
+            $prepare = $con->prepare('select * from form where email = :fname');
             if ($prepare->execute(['fname' => $fname])) {
                 $data = $prepare->fetchAll(PDO::FETCH_ASSOC);
                 $data = json_encode($data);
@@ -88,11 +88,12 @@ include 'welcome.php';
         }
         if (isset($_POST['Contact'])) {
             $fname = $_POST['fname'];
-            $prepare = $conn->prepare('select * from personal_detail where phone = :fname');
+            $prepare = $con->prepare('select * from form where Phone = :fname');
             if ($prepare->execute(['fname' => $fname])) {
                 $data = $prepare->fetchAll(PDO::FETCH_ASSOC);
                 $data = json_encode($data);
                 $characters = json_decode($data); ?>
+                <br>
 				<table>
 					<tbody>
 						<tr>
