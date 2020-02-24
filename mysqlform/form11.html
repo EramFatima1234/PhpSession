@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container"> <br>
+        <!-- Text input-->
+        <form action="form3_copy.php" style="text-align: center;" method="post"><br>
+            <small class="text-muted pt-2" style="font-family: monospace; font-size: larger;">Select a Field and enter data for that particluar field.</small>
+            <div class="btn-group form-group w-100 mx-auto mt-5" role="group" aria-label="Select A field">
+                <div class="btn-group w-100" style="border-radius: 10px;" role="group">
+                    <select onchange="setField(this)" name="dropdownOption" class="w-100" style="border-radius:10px; color:#54d6b8; font-family: monospace; font-size: larger;">
+                                    <div class="dropdown-menu w-100 text-center" aria-labelledby="dropdownId">
+                                        <a class="dropdown-item" href="#"><option value="first_name">First Name</option></a>
+                                        <a class="dropdown-item" href="#"><option value="last_name">Last Name</option></a>
+                                        <a class="dropdown-item" href="#"><option value="contact_no">Phone Number</option></a>
+                                        <a class="dropdown-item" href="#"><option value="email">Email ID</option></a>
+                                    </div>
+                                </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" id="value" name="value" class="form-control" placeholder="First Name">
+            </div>
+            <div class="form-group w-50 mx-auto mt-5">
+                <button type="submit" name="submit" class="form-control">Search</button>
+            </div>
+        </form>
+
+    </div>
+    <!-- /.container -->
+    <script>
+        function setField(selectObject) {
+            option = selectObject.value;
+            switch (option) {
+                case 'first_name':
+                    value = 'First Name';
+                    break;
+                case 'last_name':
+                    value = 'Last Name';
+                    break;
+                case 'contact_no':
+                    value = 'Phone Number';
+                    break;
+                case 'email':
+                    value = 'Email ID';
+                    break;
+                default:
+                    value = 'Choose a Field';
+                    break;
+            }
+            field = document.getElementById('value');
+            field.setAttribute('placeholder', value);
+        }
+    </script>
+</body>
+
+</html>
