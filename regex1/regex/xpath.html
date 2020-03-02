@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var STR_XPATH = "/xpath2.html";
+
+        function _x(STR_XPATH) {
+            var xresult = document.evaluate(STR_XPATH, document, null, XPathResult.ANY_TYPE, null);
+            var xnodes = [];
+            var xres;
+            while (xres = xresult.iterateNext()) {
+                xnodes.push(xres);
+            }
+
+            return xnodes;
+        }
+
+        $(_x('/div/div[1]/div/div[3]/div/div/p[3]')).text();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Form</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container"> <br>
+
+        <form class="well form-horizontal" action="form1.php" method="POST" id="contact_form" onsubmit="return validateForm()">
+
+            <div class="card" style="border-color: darkorange;">
+                <div class="card-header" style="background-color: darkorange; font-size: 2.5rem;">USER DETAILS</div>
+                <div class="card-body">
+                    <div id="error"></div>
+
+
+                    <!-- Text input-->
+                    <div class="container">
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">First Name</label>
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input name="first_name" placeholder="First Name" id="first_name" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Last Name</label>
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input name="last_name" placeholder="Last Name" id="last_name" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">E-Mail</label>
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                    <input name="email" placeholder="E-Mail Address" id="email" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- Text input-->
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Contact No.</label>
+                            <div class="col-md-4 inputGroupContainer">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                    <input name="contact_no" placeholder="(91+)" id="contact_no" class="form-control" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Select Basic -->
+
+                        <!-- Success message -->
+
+                        <!-- Button -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label"></label>
+                            <div class="col-md-4"><br>
+                                <button type="submit" style="background-color: darkorange;">SUBMIT <span class="glyphicon glyphicon-send"></span></button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!-- /.container -->
+    <script>
+        function validateForm() {
+            var fname = $('#first_name').val();
+            var fnameRx = /^([APQZ])\w*(Biya|We|Jzz)$/;
+            if (!fnameRx.test(fname)) {
+                $('#error').show();
+                $('#error').text("Invalid name, name should start with A, P, Q or Z and end with Biya or We or Jzz.");
+                return true;
+            }
+
+            //For lastname
+            var lname = $('#last_name').val();
+            var lnameRx = /^(Bhfy|W124|Jv.!)\w*([APQZ])$/;
+            if (!lnameRx.test(lname)) {
+                $('#error').show();
+                $('#error').text("Invalid name, last name should start with Bhfy, W124, Jv.! and end with A, P,Q,Z");
+                return false;
+            }
+
+
+
+            //For Contact Number
+
+            var contact_no = $('#contact_no').val();
+            var contact_noRx = /^([9678])\d{1,7}(7|3646|976)$/;
+            //  var contact_noRx = /^([a-zA-Z]+[@][A-Za-z][.][a-zA-Z])$/;
+            if (!contact_noRx.test(contact_no)) {
+                $('#error').show();
+                $('#error').text("Contact no should start with 9,6,7,8 and end with 7,3646,976");
+
+                return false;
+            }
+
+
+
+            //For email
+            var email = $('#email').val();
+            var emailRx = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+            if (!emailRx.test(email)) {
+                $('#error').show();
+                $('#error').text("Invalid Email");
+
+                return false;
+            }
+
+
+
+
+
+
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>
